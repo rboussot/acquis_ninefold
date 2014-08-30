@@ -1,0 +1,25 @@
+<table class = "marge">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Email</th>
+      <th>Mot de passe</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password %>**********</td>
+        <td><%= link_to image_tag("voir.png"), user %></td>
+        <td><%= link_to image_tag("edit.png"), edit_user_path(user) %></td>
+        <td><%= link_to image_tag("suppr.png"), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div class= "ajouter"><%= link_to '+', new_user_path %></div>

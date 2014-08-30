@@ -1,0 +1,25 @@
+<%= form_for(@userlitt) do |f| %>
+  <% if @userlitt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@userlitt.errors.count, "error") %> prohibited this userlitt from being saved:</h2>
+
+      <ul>
+      <% @userlitt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.select("user_id", User.all.collect {|user| [ user.email, user.id ] }, {selected: @userlitt.user_id})%>
+  </div>
+  <div class="field">
+    <%= f.label :oeuvre_id %><br>
+    <%= f.select("oeuvre_id", Oeuvre.all.collect {|oeuvre| [ oeuvre.titre_oeuvre, oeuvre.id ] }, {selected: @userlitt.oeuvre_id})%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acquis</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<header>
+	<% if params['controller'] == 'accueil' %>
+	<div id = "logo"><a href="/"><%= image_tag 'logo_on.png', :size => "55x55" %></a></div>
+	<% else %>
+	<div id = "logo"><a href="/"><%= image_tag 'logo_off.png', :size => "55x55" %></a></div>
+	<% end %>
+<%= render 'layouts/nav' %>
+</header>
+
+<% case params['controller'] %>
+<% when 'accueil' %>
+	<aside><%= render 'layouts/matieres' %></aside>
+	<%= render 'layouts/connexion' %>
+	<body class = "visite">
+<% when 'users' %>
+	<aside><%= render 'layouts/matieres' %></aside>
+	<body class = "visite">
+<% when 'sessions' %>
+	<aside><%= render 'layouts/matieres' %></aside>
+	<body class = "visite">
+<% when "bibliotheque" %>
+	<aside><%= render 'layouts/matieres' %></aside>
+	<%= render 'layouts/connexion' %>
+	<body class = "visite">
+<% when "mes_cours" %>
+	<aside><%= render 'layouts/matieres' %></aside>
+	<%= render 'layouts/connexion' %>
+	<body class = "visite">
+<% when "formation" %>
+	<aside><%= render 'layouts/chapitres' %></aside>
+	<%= render 'layouts/connexion' %>
+	<body class = "visite">
+<% else %>
+	<body class = "admin">
+<% end %>
+
+<div class = "notice">
+	<% flash.each do |name, msg| %>
+	<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

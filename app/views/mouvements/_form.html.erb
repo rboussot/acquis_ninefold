@@ -1,0 +1,21 @@
+<%= form_for(@mouvement) do |f| %>
+  <% if @mouvement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mouvement.errors.count, "error") %> prohibited this mouvement from being saved:</h2>
+
+      <ul>
+      <% @mouvement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titre_mouvement %><br>
+    <%= f.text_field :titre_mouvement %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

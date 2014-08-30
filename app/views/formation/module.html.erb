@@ -1,0 +1,47 @@
+<br>
+<h1>
+<%= @auteur.nom_entier+', '+@oeuvre.titre_oeuvre+' ('+@oeuvre.date.to_s+')' %>
+</h1>
+<br>
+<% if params['module'] == nil %>
+<h2>Emplacement dans la bibliothèque :</h2>
+<ul>
+	<li>Par niveau
+		<ul>
+   			<% @lienthemes.each do |t| %>
+       		<li><%= 'Étudié en '+t.theme.niveau+' dans la thématique  "'+t.theme.titre_theme+'"' %></li>
+    		<% end %>
+    	</ul>
+    </li>
+	<li>Par siècle : 
+		<ul><li>
+		<% case @oeuvre.date %>
+			<% when '< 0' %>
+			Antiquité
+			<% when 0..1500 %>
+			Moyen-âge
+			<% when 1501..1600 %>
+			XVIe siècle
+			<% when 1601..1700 %>
+			XVIIe siècle
+			<% when 1701..1800 %>
+			XVIIIe siècle
+			<% when 1801..1900 %>
+			XIXe siècle
+			<% when 1901..2000 %>
+			XXe siècle
+			<% when 2001..2100 %>
+			XXIe siècle
+	<% end %>
+	<%= '(Oeuvre publiée en '+@oeuvre.date.to_s+')' %></li>
+	</ul></li>
+	<li>
+	Par auteur : 
+	<ul><li>
+		<%= @auteur.prenom+' '+@auteur.nom+' simplement appelé '+@auteur.nom_entier+', né en '+@auteur.date_n.to_s+' et mort en '+@auteur.date_m.to_s %></li>
+</ul></ul>
+<% end %>
+
+<% if params['module'] != nil %>
+<%= video_tag @passage.video, size: '1024x640', controls: 'true', autoplay: true, poster: 'poster.png', :autobuffer => true %>
+<% end %>

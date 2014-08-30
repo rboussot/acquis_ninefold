@@ -1,0 +1,33 @@
+<%= form_for(@passage) do |f| %>
+  <% if @passage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@passage.errors.count, "error") %> prohibited this passage from being saved:</h2>
+
+      <ul>
+      <% @passage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :oeuvre_id %><br>
+    <%= f.select("oeuvre_id", Oeuvre.all.order('titre_oeuvre ASC').collect {|p| [ p.titre_oeuvre, p.id ] }, {selected: @passage.oeuvre_id})%>
+  </div>
+
+  <div class="field">
+    <%= f.label :titre_passage %><br>
+    <%= f.text_field :titre_passage %>
+  </div>
+
+  <div class="field">
+    <%= f.label :video %><br>
+    <%= f.text_field :video %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

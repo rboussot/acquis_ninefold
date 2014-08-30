@@ -1,0 +1,20 @@
+<br><h1>Litterature</h1><br>
+
+<% if @userlitts.count == 0 %>
+	<p>Vous n'avez pas encore de cours en littérature.</p>
+<% else %><br>
+
+    <% @userlitts.each do |userlitt| %>
+
+		<%= link_to(formation_module_path(formation: userlitt.oeuvre.id)) do %>
+		<div class = "carte">
+		<%= image_tag("go.png", size:'20x20') %>
+		<%= userlitt.oeuvre.auteur.nom_entier %><br>
+		<i><%= userlitt.oeuvre.titre_oeuvre %></i><br>
+		<%= userlitt.oeuvre.date %>
+		</div>
+		<% end %>
+
+	<% end %>
+
+<% end %>

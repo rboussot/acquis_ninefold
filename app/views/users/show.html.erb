@@ -1,0 +1,12 @@
+<p>
+  <strong>Adresse email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Mot de passe:</strong>
+  <%= @user.password %>**********
+</p>
+
+<%= link_to 'Éditer', edit_user_path(@user) %> |
+<%= link_to 'Retour aux comptes', users_path %>

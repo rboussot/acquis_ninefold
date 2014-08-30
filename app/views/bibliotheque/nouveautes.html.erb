@@ -1,0 +1,16 @@
+<div class = "bibli">
+<br><h1>Nouveautés</h1><br><br>
+
+
+    <% @oeuvres.each do |o| %>
+
+		<%= link_to(formation_module_path(formation: o.id)) do %>
+		<div class = "carte">
+		<%= image_tag("go.png", size:'20x20') %>
+		<%= o.auteur.nom_entier %><br>
+		<i><%= o.titre_oeuvre %></i><br>
+		<%= o.date %>
+		</div>
+		<% end %>
+
+	<% end %>

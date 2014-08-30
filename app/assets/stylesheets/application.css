@@ -1,0 +1,275 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+body, #bibli, li {
+ 	font-family: 'Calibri';
+ }
+
+.notice {
+	display: block;
+	width: 99%;
+	background-color: #b4ffce;
+	margin: 0px;
+	font-size: 24px;
+	line-height: 3;
+	text-align: center;
+	margin-bottom: 20px;
+	min-width: 750px;
+	padding: 0px;
+}
+
+.promo {
+	display: block;
+	width: 95%;
+	background-color: #EEE;
+	margin: 0px;
+	line-height: 120px;
+	text-align: right;
+	font-size: 24px;
+	padding: 20px;
+	min-width: 750px;
+}
+
+.imagepromo {
+	position: absolute;
+	height: 130px;
+	margin: 15px;
+	border: 1px gray solid;
+}
+
+.bouton {
+	display: inline-block;
+	width: 26%;
+	background-color: #EEE;
+	margin-right: 2%;
+	line-height: 80px;
+	text-align: center;
+	font-size: 26px;
+	padding: 2%;
+	min-width: 140px;
+	border: 1px gray solid;
+}
+
+#logo{
+	z-index: 4;
+	position: fixed;
+	top: 20px;
+	left: 10px;
+}
+
+ #connexion {
+	position: fixed;
+	top: 30px;
+	left: 85px;
+	display: block;
+	z-index: 3;
+	font-size: 20px;
+	font-style: italic;
+	color: #5ae187;
+}
+
+#connexion a{
+	color: #5ae187;
+}
+
+nav {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	line-height: 40px;
+	background-color: #2397a0;
+	color: #9cd1d9;
+	z-index: 1;
+	padding: 20px ;
+	border-top: 8px #9cd1d9 solid;
+	border-bottom: 12px #9cd1d9 solid;
+}
+
+.nav {
+	font-size: 28px;
+	text-align: left;
+	padding-left: 35%;
+}
+
+.navadmin {
+	font-size: 20px;
+	text-align: center;
+}
+
+.aside {
+	display: inline-block;
+	left: 0;
+	top: 100px;
+	position: fixed;
+	width: 215px;
+	height: 100%;
+	border-right: 4px #9cd1d9 solid;
+	padding-left: 20px;
+	padding-top: 30px;
+	font-size: 24px;
+	overflow: break-word;
+	background-color: white;
+}
+
+.ajouter {
+	position: fixed;
+	text-align: center;
+	font-size: 30px;
+	top: 24px;
+	right: 24px;
+	display: block;
+	background-color: white;
+	height: 24px; 
+	width: 24px; 
+	z-index: 3;
+	padding: 10px;
+	border: 1px black solid;
+}
+
+body.visite {
+	margin-left: 280px;
+}
+
+body {
+	margin-top: 120px;
+}
+
+header strong a:visited {
+	color: #ffd84d;
+}
+
+header a:visited {
+	color: #9cd1d9;
+}
+
+.aside strong a {
+	background-color: #ffd84d;
+}
+
+body a, a:hover, a:visited, a:focus {
+	text-decoration:none;
+	color: black;
+	background-color: transparent;
+}
+
+.entree_off {
+	display: inline-block;
+	width: 200px;
+	line-height: 120px;
+	background-color: #EEE;
+	text-align: center;
+	font-size: 20px;
+	margin: 10px;
+	min-width: 200px;
+}
+
+.entree_on {
+	display: inline-block;
+	width: 200px;
+	line-height: 120px;
+	background-color: #ffd84d;
+	text-align: center;
+	font-size: 20px;
+	margin: 10px;
+	min-width: 200px;
+}
+
+.entree {
+
+	position: fixed;
+	background-color: white;
+	top: 100px;
+	bottom: 0px;
+	right: 0px;
+	left: 250px;
+	overflow: auto;
+	z-index: 0;
+}
+
+.carte {
+	display: inline-block;
+	margin-left: -15px;
+	margin-top: -26px;
+	margin-bottom: 40px;
+	margin-right: 25px;
+	background-color: #EEE;
+	width: 200px;
+	min-height: 110px;
+	line-height: 1.5;
+	text-align: right;
+	vertical-align: top;
+	padding-right: 20px;
+	padding-top: 10px;
+	font-size: 18px;
+	padding-left: 5px;
+	padding-bottom: 20px;
+}
+
+.li_on {
+	list-style: url(http://cdn1.enviedefraises.fr/themes/enviedefraises_fr/img/fleche_filt_open.gif);
+}
+
+ul {
+	margin-left: 10px;
+	padding-left: 10px;
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+ul li {
+	list-style: url(http://haxeui.org/docs/api/triangle-closed.png);
+}
+
+li ul li{
+	list-style: none;
+	font-size: 20px;
+}
+
+.sortie {
+	display: inline-block;
+	position: fixed;
+	left: 50%;
+	right: 60px;
+	top: 300px;
+	bottom: 20px;
+	background-color: #EEE;
+	overflow: scroll;
+	font-size: 16px;
+	padding: 10px;
+	z-index: 5;
+}
+
+#bibli {
+	display: inline-block;
+	width: 45%;
+	overflow: auto;
+	bottom: 0px;
+}
+
+a .enlever {
+	position:absolute;
+	margin-top:23px;
+    margin-left:-35px;
+    color:black;
+    background:#ffe599;
+    padding:15px;
+    box-shadow:0 0 2px rgba(0,0,0,.5);
+    opacity:0;
+}
+
+a .ajout {
+	position:absolute;
+	margin-top:23px;
+    margin-left:-35px;
+    color:black;
+    background:#d9ead3;
+    padding:15px;
+    box-shadow:0 0 2px rgba(0,0,0,.5);
+    opacity:0;
+}
+
+a:hover span, a:focus span{
+    opacity:1;       
+}

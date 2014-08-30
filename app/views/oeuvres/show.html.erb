@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre oeuvre:</strong>
+  <%= @oeuvre.titre_oeuvre %>
+</p>
+
+<p>
+  <strong>Auteur:</strong>
+  <%= @oeuvre.auteur.nom_entier %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @oeuvre.genre.titre_genre %>
+</p>
+
+<p>
+  <strong>Date de publication:</strong>
+  <%= @oeuvre.date %>
+</p>
+
+<p>
+  <strong>Passages:<br></strong>
+    <% @passage.each do |p| %>
+        <%= p.titre_passage %><br>
+    <% end %>
+<%= link_to 'Ajouter un passage', new_passage_path(@oeuvre) %>
+</p>
+
+<p>
+  <strong>Thèmes:<br></strong>
+    <% @lienthemes.each do |x| %>
+        <%= x.theme.titre_theme %><br>
+    <% end %>
+<%= link_to 'Ajouter un thème', new_lientheme_path(@oeuvre) %>
+</p>
+
+<%= link_to 'Éditer', edit_oeuvre_path(@oeuvre) %> |
+<%= link_to 'Retour aux oeuvres', oeuvres_path %> |

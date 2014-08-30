@@ -1,0 +1,11 @@
+<div id = "connexion">
+
+<% if current_user %>
+	<%= current_user.email %><br>
+	<%= link_to "se déconnecter", log_out_path %>
+<% else %>
+	<%= link_to "créer un compte", sign_up_path %><br> 
+	<%= link_to "se connecter", log_in_path %>
+<% end %>
+
+</div>

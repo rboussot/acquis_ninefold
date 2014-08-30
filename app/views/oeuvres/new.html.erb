@@ -1,0 +1,45 @@
+<%= form_for(@oeuvre) do |f| %>
+  <% if @oeuvre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@oeuvre.errors.count, "error") %> prohibited this oeuvre from being saved:</h2>
+
+      <ul>
+      <% @oeuvre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titre_oeuvre %><br>
+    <%= f.text_field :titre_oeuvre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :auteur_id %><br>
+    <%= f.select("auteur_id", Auteur.all.order('nom_entier ASC').collect {|p| [ p.nom_entier, p.id ] }, {include_blank: '-'})%>
+  </div>
+
+  <div class="field">
+    <%= f.label :genre_id %><br>
+    <%= f.select("genre_id", Genre.all.order('titre_genre ASC').collect {|p| [ p.titre_genre, p.id ] }, {include_blank: '-'})%>
+  </div>
+
+    <div class="field">
+    <%= f.label :mouvement_id %><br>
+    <%= f.select("mouvement_id", Mouvement.all.order('titre_mouvement ASC').collect {|p| [ p.titre_mouvement, p.id ] }, {include_blank: '-'})%>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.number_field :date %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Retour aux oeuvres', oeuvres_path %>

@@ -1,0 +1,148 @@
+
+
+<% case params["controller"] %>
+<% when "accueil" %><nav class = "nav">
+  	  <%= link_to "Mes cours", mes_cours_litterature_path %> |
+   	  <%= link_to "Bibliothèque", bibliotheque_nouveautes_path %>
+<% when "users" %><nav class = "nav">
+  <% if params["action"] == "new" %>
+      <%= link_to "Mes cours", mes_cours_litterature_path %> |
+      <%= link_to "Bibliothèque", bibliotheque_nouveautes_path %>
+  <% else %><nav class = "navadmin">
+      <%= link_to "Auteurs", auteurs_path %> |
+      <%= link_to "Oeuvres", oeuvres_path %> |
+      <%= link_to "Passages", passages_path %> |
+      <%= link_to "Thèmes", themes_path %> |
+      <%= link_to "Lienthèmes", lienthemes_path %> |
+      <%= link_to "Genres", genres_path %> |
+      <%= link_to "Mouvements", mouvements_path %> |
+      <strong><%= link_to "Comptes", users_path %> |</strong>
+      <%= link_to "Userlitts", userlitts_path %>
+  <% end %>
+<% when "sessions" %><nav class = "nav">
+      <%= link_to "Mes cours", mes_cours_litterature_path %> |
+      <%= link_to "Bibliothèque", bibliotheque_nouveautes_path %>
+<% when "formation" %><nav class = "nav">
+      <%= link_to "Mes cours", mes_cours_litterature_path %> |
+      <%= link_to "Bibliothèque", bibliotheque_nouveautes_path %>
+<% when "bibliotheque" %><nav class = "nav">
+    <% case params["action"] %>
+    <% when "nouveautes" %>
+          <%= link_to "Mes cours", mes_cours_litterature_path %> |
+          <strong><%= link_to "Bibliothèque", bibliotheque_nouveautes_path %></strong>
+    <% when "parauteur" %>
+          <%= link_to "Mes cours", mes_cours_litterature_path %> |
+          <strong><%= link_to "Bibliothèque", bibliotheque_parauteur_path %></strong>
+    <% when "parsiecle" %>
+          <%= link_to "Mes cours", mes_cours_litterature_path %> |
+          <strong><%= link_to "Bibliothèque", bibliotheque_parsiecle_path %></strong>
+    <% when "parniveau" %>
+          <%= link_to "Mes cours", mes_cours_litterature_path %> |
+          <strong><%= link_to "Bibliothèque", bibliotheque_parniveau_path %></strong>
+    <% when "methode" %>
+          <%= link_to "Mes cours", mes_cours_methode_path %> |
+          <strong><%= link_to "Bibliothèque", bibliotheque_methode_path %></strong>
+    <% when "grammaire" %>
+          <%= link_to "Mes cours", mes_cours_grammaire_path %> |
+          <strong><%= link_to "Bibliothèque", bibliotheque_grammaire_path %></strong>
+    <% when "stylistique" %>
+          <%= link_to "Mes cours", mes_cours_stylistique_path %> |
+          <strong><%= link_to "Bibliothèque", bibliotheque_stylistique_path %></strong>
+    <% end %>
+<% when "mes_cours" %><nav class = "nav">
+      <% case params["action"] %>
+      <% when "litterature" %>
+          <strong><%= link_to "Mes cours", mes_cours_litterature_path %></strong> |
+          <%= link_to "Bibliothèque", bibliotheque_parauteur_path %>
+      <% when "methode" %>
+          <strong><%= link_to "Mes cours", mes_cours_methode_path %></strong> |
+          <%= link_to "Bibliothèque", bibliotheque_methode_path %>
+      <% when "grammaire" %>
+          <strong><%= link_to "Mes cours", mes_cours_grammaire_path %></strong> |
+          <%= link_to "Bibliothèque", bibliotheque_grammaire_path %>
+      <% when "stylistique" %>
+          <strong><%= link_to "Mes cours", mes_cours_stylistique_path %></strong> |
+          <%= link_to "Bibliothèque", bibliotheque_stylistique_path %>
+      <% end %>
+<% when "auteurs" %><nav class = "navadmin">
+    <strong><%= link_to "Auteurs", auteurs_path %> |</strong>
+  	<%= link_to "Oeuvres", oeuvres_path %> |
+  	<%= link_to "Passages", passages_path %> |
+  	<%= link_to "Thèmes", themes_path %> |
+  	<%= link_to "Lienthèmes", lienthemes_path %> |
+  	<%= link_to "Genres", genres_path %> |
+  	<%= link_to "Mouvements", mouvements_path %> |
+    <%= link_to "Comptes", users_path %> |
+    <%= link_to "Userlitts", userlitts_path %>
+<% when "oeuvres" %><nav class = "navadmin">
+  	<%= link_to "Auteurs", auteurs_path %> |
+  	<strong><%= link_to "Oeuvres", oeuvres_path %> |</strong>
+  	<%= link_to "Passages", passages_path %> |
+  	<%= link_to "Thèmes", themes_path %> |
+  	<%= link_to "Lienthèmes", lienthemes_path %> |
+  	<%= link_to "Genres", genres_path %> |
+  	<%= link_to "Mouvements", mouvements_path %> |
+    <%= link_to "Comptes", users_path %> |
+    <%= link_to "Userlitts", userlitts_path %>
+<% when "passages" %><nav class = "navadmin">
+  	<%= link_to "Auteurs", auteurs_path %> |
+  	<%= link_to "Oeuvres", oeuvres_path %> |
+  	<strong><%= link_to "Passages", passages_path %> |</strong>
+  	<%= link_to "Thèmes", themes_path %> |
+  	<%= link_to "Lienthèmes", lienthemes_path %> |
+  	<%= link_to "Genres", genres_path %> |
+  	<%= link_to "Mouvements", mouvements_path %> |
+    <%= link_to "Comptes", users_path %> |
+    <%= link_to "Userlitts", userlitts_path %>
+<% when "themes" %><nav class = "navadmin">
+  	<%= link_to "Auteurs", auteurs_path %> |
+  	<%= link_to "Oeuvres", oeuvres_path %> |
+  	<%= link_to "Passages", passages_path %> |
+  	<strong><%= link_to "Thèmes", themes_path %> |</strong>
+  	<%= link_to "Lienthèmes", lienthemes_path %> |
+  	<%= link_to "Genres", genres_path %> |
+  	<%= link_to "Mouvements", mouvements_path %> |
+    <%= link_to "Comptes", users_path %> |
+    <%= link_to "Userlitts", userlitts_path %>
+<% when "lienthemes" %><nav class = "navadmin">
+  	<%= link_to "Auteurs", auteurs_path %> |
+  	<%= link_to "Oeuvres", oeuvres_path %> |
+  	<%= link_to "Passages", passages_path %> |
+  	<%= link_to "Thèmes", themes_path %> |
+  	<strong><%= link_to "Lienthèmes", lienthemes_path %> |</strong>
+  	<%= link_to "Genres", genres_path %> |
+  	<%= link_to "Mouvements", mouvements_path %> |
+    <%= link_to "Comptes", users_path %> |
+    <%= link_to "Userlitts", userlitts_path %>
+<% when "genres" %><nav class = "navadmin">
+  	<%= link_to "Auteurs", auteurs_path %> |
+  	<%= link_to "Oeuvres", oeuvres_path %> |
+  	<%= link_to "Passages", passages_path %> |
+  	<%= link_to "Thèmes", themes_path %> |
+  	<%= link_to "Lienthèmes", lienthemes_path %> |
+  	<strong><%= link_to "Genres", genres_path %> |</strong>
+  	<%= link_to "Mouvements", mouvements_path %> |
+    <%= link_to "Comptes", users_path %> |
+    <%= link_to "Userlitts", userlitts_path %>
+<% when "mouvements" %><nav class = "navadmin">
+  	<%= link_to "Auteurs", auteurs_path %> |
+  	<%= link_to "Oeuvres", oeuvres_path %> |
+  	<%= link_to "Passages", passages_path %> |
+  	<%= link_to "Thèmes", themes_path %> |
+  	<%= link_to "Lienthèmes", lienthemes_path %> |
+  	<%= link_to "Genres", genres_path %> |
+  	<strong><%= link_to "Mouvements", mouvements_path %></strong> |
+    <%= link_to "Comptes", users_path %> |
+    <%= link_to "Userlitts", userlitts_path %>
+<% when "userlitts" %><nav class = "navadmin">
+    <%= link_to "Auteurs", auteurs_path %> |
+    <%= link_to "Oeuvres", oeuvres_path %> |
+    <%= link_to "Passages", passages_path %> |
+    <%= link_to "Thèmes", themes_path %> |
+    <%= link_to "Lienthèmes", lienthemes_path %> |
+    <%= link_to "Genres", genres_path %> |
+    <%= link_to "Mouvements", mouvements_path %> |
+    <%= link_to "Comptes", users_path %> |
+    <strong><%= link_to "Userlitts", userlitts_path %></strong>
+<% end %>
+</nav>

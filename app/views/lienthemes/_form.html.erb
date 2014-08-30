@@ -1,0 +1,25 @@
+<%= form_for(@lientheme) do |f| %>
+  <% if @lientheme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lientheme.errors.count, "error") %> prohibited this lientheme from being saved:</h2>
+
+      <ul>
+      <% @lientheme.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :oeuvre_id %><br>
+    <%= f.select("oeuvre_id", Oeuvre.all.order('titre_oeuvre ASC').collect {|p| [ p.titre_oeuvre, p.id ] }, {selected: @lientheme.oeuvre_id})%>
+  </div>
+  <div class="field">
+    <%= f.label :theme_id %><br>
+    <%= f.select("theme_id", Theme.all.order('titre_theme ASC').collect {|p| [ p.titre_theme, p.id ] }, {selected: @lientheme.theme_id})%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

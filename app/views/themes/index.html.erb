@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Titre theme</th>
+      <th>Niveau</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @themes.each do |theme| %>
+      <tr>
+        <td><%= theme.id %></td>
+        <td><%= theme.titre_theme %></td>
+        <td><%= theme.niveau %></td>
+        <td><%= link_to image_tag("voir.png"), theme %></td>
+        <td><%= link_to image_tag("edit.png"), edit_theme_path(theme) %></td>
+        <td><%= link_to image_tag("suppr.png"), theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class= "ajouter"><%= link_to '+', new_theme_path %></div>

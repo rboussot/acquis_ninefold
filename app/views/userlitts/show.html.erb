@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @userlitt.user.email %>
+</p>
+
+<p>
+  <strong>Oeuvre:</strong>
+  <%= @userlitt.oeuvre.titre_oeuvre %>
+</p>
+
+<%= link_to 'Éditer', edit_userlitt_path(@userlitt) %> |
+<%= link_to 'Retour aux userlitts', userlitts_path %>

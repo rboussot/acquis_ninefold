@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre mouvement:</strong>
+  <%= @mouvement.titre_mouvement %>
+</p>
+
+<%= link_to 'Éditer', edit_mouvement_path(@mouvement) %> |
+<%= link_to 'Retour aux mouvements', mouvements_path %>

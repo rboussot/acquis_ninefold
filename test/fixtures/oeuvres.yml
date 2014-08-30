@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titre_oeuvre: MyString
+  auteur_id: 1
+  genre: MyString
+  mouvement: MyString
+
+two:
+  titre_oeuvre: MyString
+  auteur_id: 1
+  genre: MyString
+  mouvement: MyString

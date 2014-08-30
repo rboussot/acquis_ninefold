@@ -1,0 +1,14 @@
+<% case params["action"] %>
+	<% when "parniveau" %>
+		<%= link_to('parniveau') do %><div class = "entree_on">Par niveau</div><% end %>
+		<%= link_to('parsiecle') do %><div class = "entree_off">Par siècle</div><% end %>
+		<%= link_to('parauteur') do %><div class = "entree_off">Par auteur</div><% end %>
+	<% when "parsiecle" %>
+		<%= link_to('parniveau') do %><div class = "entree_off">Par niveau</div><% end %>
+		<%= link_to('parsiecle') do %><div class = "entree_on">Par siècle</div><% end %>
+		<%= link_to('parauteur') do %><div class = "entree_off">Par auteur</div><% end %>
+	<% when "parauteur" %>
+		<%= link_to('parniveau') do %><div class = "entree_off">Par niveau</div><% end %>
+		<%= link_to('parsiecle') do %><div class = "entree_off">Par siècle</div><% end %>
+		<%= link_to('parauteur') do %><div class = "entree_on">Par auteur</div><% end %>
+<% end %>

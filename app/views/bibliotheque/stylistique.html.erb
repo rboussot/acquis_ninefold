@@ -1,0 +1,19 @@
+<div class = "entree">
+<%= render 'entree' %>
+<br>
+
+<div class = "sortie">
+<%= render 'sortie' %>
+</div>
+
+<div class = "bibli">
+		<ul>
+			<li>
+			<%= link_to 'Figures', bibliotheque_parsiecle_path(:filtre => '1') %>
+			</li>
+			<li>
+			<%= link_to 'Discours', bibliotheque_parsiecle_path(:filtre => '1') %>
+			</li>
+		</ul>
+</div>
+</div>

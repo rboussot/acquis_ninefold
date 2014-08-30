@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @auteur.prenom %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @auteur.nom %>
+</p>
+
+<p>
+  <strong>Nom entier:</strong>
+  <%= @auteur.nom_entier %>
+</p>
+
+<p>
+  <strong>Date n:</strong>
+  <%= @auteur.date_n %>
+</p>
+
+<p>
+  <strong>Date m:</strong>
+  <%= @auteur.date_m %>
+</p>
+
+<p>
+  <strong>Oeuvres:<br></strong>
+    <% @oeuvres_auteur.each do |x| %>
+        <%= x.titre_oeuvre %><br>
+    <% end %>
+<%= link_to 'Ajouter une oeuvre', new_oeuvre_path(@auteur) %>
+</p>
+
+<%= link_to 'Éditer', edit_auteur_path(@auteur) %> |
+<%= link_to 'Retour aux auteurs', auteurs_path %>

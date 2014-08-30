@@ -1,0 +1,40 @@
+<% if params['theme'] != nil %>
+	<% @lienthemes.where(theme_id: params['theme']).select do |t| %>
+		<% @oeuvres.where(id: t.oeuvre_id).select do |a| %>
+		<%= link_to a.titre_oeuvre, formation_module_path(:formation => t.oeuvre_id) %><br>
+		<% end %>
+	<% end %>
+<% end %>
+
+<% if params['auteur'] != nil %>
+		<% @oeuvres.each do |o| %>
+		<%= link_to o.titre_oeuvre, formation_module_path(:formation => o.id) %><br>
+	<% end %>
+<% end %>
+
+<% case params['filtre'] %>
+<% when "A" %>
+	<% @oeuvres.where('date < 0').each do |oeuvre| %>
+	<%= link_to oeuvre.titre_oeuvre+' ('+oeuvre.date.to_s+')', root_path %>)<br><% end %>
+<% when "MA" %>
+	<% @oeuvres.where('date > 0 and date < 1501').each do |oeuvre| %>
+	<%= link_to oeuvre.titre_oeuvre+' ('+oeuvre.date.to_s+')', root_path %><br><% end %>
+<% when "16e" %>
+	<% @oeuvres.where('date > 1500 and date < 1601').each do |oeuvre| %>
+	<%= link_to oeuvre.titre_oeuvre+' ('+oeuvre.date.to_s+')', formation_module_path(:formation => oeuvre.id) %><br><% end %>
+<% when "17e" %>
+	<% @oeuvres.where('date > 1600 and date < 1701').each do |oeuvre| %>
+	<%= link_to oeuvre.titre_oeuvre+' ('+oeuvre.date.to_s+')', formation_module_path(:formation => oeuvre.id) %><br><% end %>
+<% when "18e" %>
+	<% @oeuvres.where('date > 1700 and date < 1801').each do |oeuvre| %>
+	<%= link_to oeuvre.titre_oeuvre+' ('+oeuvre.date.to_s+')', formation_module_path(:formation => oeuvre.id) %><br><% end %>
+<% when "19e" %>
+	<% @oeuvres.where('date > 1800 and date < 1901').each do |oeuvre| %>
+	<%= link_to oeuvre.titre_oeuvre+' ('+oeuvre.date.to_s+')', formation_module_path(:formation => oeuvre.id) %><br><% end %>
+<% when "20e" %>
+	<% @oeuvres.where('date > 1900 and date < 2001').each do |oeuvre| %>
+	<%= link_to oeuvre.titre_oeuvre+' ('+oeuvre.date.to_s+')', formation_module_path(:formation => oeuvre.id) %><br><% end %>
+<% when "21e" %>
+	<% @oeuvres.where('date > 2000 and date < 2101').each do |oeuvre| %>
+	<%= link_to oeuvre.titre_oeuvre+' ('+oeuvre.date.to_s+')', formation_module_path(:formation => oeuvre.id) %><br><% end %>
+<% end %>

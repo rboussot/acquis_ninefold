@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre theme:</strong>
+  <%= @theme.titre_theme %>
+</p>
+
+<p>
+  <strong>Niveau:</strong>
+  <%= @theme.niveau %>
+</p>
+
+<%= link_to 'Éditer', edit_theme_path(@theme) %> |
+<%= link_to 'Retour aux thèmes', themes_path %>

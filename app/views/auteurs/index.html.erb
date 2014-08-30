@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<table class = "marge">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Nom entier</th>
+      <th>Date naissance</th>
+      <th>Date mort</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @auteurs.each do |auteur| %>
+      <tr>
+        <td><%= auteur.id %></td>
+        <td><%= auteur.prenom %></td>
+        <td><%= auteur.nom %></td>
+        <td><%= auteur.nom_entier %></td>
+        <td><%= auteur.date_n %></td>
+        <td><%= auteur.date_m %></td>
+        <td><%= link_to image_tag("voir.png"), auteur %></td>
+        <td><%= link_to image_tag("edit.png"), edit_auteur_path(auteur) %></td>
+        <td><%= link_to image_tag("suppr.png"), auteur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div class= "ajouter"><%= link_to '+', new_auteur_path %></div>

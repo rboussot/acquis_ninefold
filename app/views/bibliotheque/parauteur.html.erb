@@ -1,0 +1,128 @@
+<span class = "entree">
+<%= render 'entree' %>
+<br>
+
+<div class = "sortie">
+<%= render 'sortie' %>
+</div>
+
+
+<div class = "bibli">
+
+<% case params['filtre'] %>
+<% when "ABC" %>
+	<ul><li class = "li_on"><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %>
+			<ul><% @auteurs.select('nom_entier').distinct.each do |auteur| %>
+   			<% if auteur.nom_entier[0] == 'A' || auteur.nom_entier[0] == 'B' || auteur.nom_entier[0] == 'C' %><li>
+   			<%= link_to auteur.nom_entier, bibliotheque_parauteur_path(:filtre => 'ABC', :auteur => auteur.nom_entier)%>
+   			</li><% end %><% end %></ul>
+	<li><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %></li>
+	<li><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %></li>
+	<li><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %></li>
+	<li><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %></li>
+	<li><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %></li>
+	<li><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %></li>
+	<li><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %></li></ul>
+<% when "DEF" %>
+	<ul><li><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %></li>
+	<li class = "li_on"><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %>
+			<ul><% @auteurs.select('nom_entier').distinct.each do |auteur| %>
+   			<% if auteur.nom_entier[0] == 'D' || auteur.nom_entier[0] == 'E' || auteur.nom_entier[0] == 'F' %><li>
+   			<%= link_to auteur.nom_entier, bibliotheque_parauteur_path(:filtre => 'DEF', :auteur => auteur.nom_entier)%>
+   			</li><% end %><% end %></ul>
+	<li><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %></li>
+	<li><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %></li>
+	<li><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %></li>
+	<li><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %></li>
+	<li><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %></li>
+	<li><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %></li></ul>
+<% when "GHI" %>
+	<ul><li><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %></li>
+	<li><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %></li>
+	<li class = "li_on"><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %>
+			<ul><% @auteurs.select('nom_entier').distinct.each do |auteur| %>
+   			<% if auteur.nom_entier[0] == 'G' || auteur.nom_entier[0] == 'H' || auteur.nom_entier[0] == 'I' %><li>
+   			<%= link_to auteur.nom_entier, bibliotheque_parauteur_path(:filtre => 'GHI', :auteur => auteur.nom_entier)%>
+   			</li><% end %><% end %></ul>
+	<li><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %></li>
+	<li><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %></li>
+	<li><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %></li>
+	<li><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %></li>
+	<li><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %></li></ul>
+<% when "JKL" %>
+	<ul><li><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %></li>
+	<li><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %></li>
+	<li><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %></li>
+	<li class = "li_on"><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %>
+			<ul><% @auteurs.select('nom_entier').distinct.each do |auteur| %>
+   			<% if auteur.nom_entier[0] == 'J' || auteur.nom_entier[0] == 'K' || auteur.nom_entier[0] == 'L' %><li>
+   			<%= link_to auteur.nom_entier, bibliotheque_parauteur_path(:filtre => 'JKL', :auteur => auteur.nom_entier)%>
+   			</li><% end %><% end %></ul>
+	<li><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %></li>
+	<li><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %></li>
+	<li><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %></li>
+	<li><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %></li></ul>
+<% when "MNO" %>
+	<ul><li><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %></li>
+	<li><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %></li>
+	<li><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %></li>
+	<li><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %></li>
+	<li class = "li_on"><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %>
+			<ul><% @auteurs.select('nom_entier').distinct.each do |auteur| %>
+   			<% if auteur.nom_entier[0] == 'M' || auteur.nom_entier[0] == 'N' || auteur.nom_entier[0] == 'O' %><li>
+   			<%= link_to auteur.nom_entier, bibliotheque_parauteur_path(:filtre => 'MNO', :auteur => auteur.nom_entier)%>
+   			</li><% end %><% end %></ul>
+	<li><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %></li>
+	<li><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %></li>
+	<li><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %></li></ul>
+<% when "PQR" %>
+	<ul><li><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %></li>
+	<li><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %></li>
+	<li><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %></li>
+	<li><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %></li>
+	<li><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %></li>
+	<li class = "li_on"><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %>
+			<ul><% @auteurs.select('nom_entier').distinct.each do |auteur| %>
+   			<% if auteur.nom_entier[0] == 'P' || auteur.nom_entier[0] == 'Q' || auteur.nom_entier[0] == 'R' %><li>
+   			<%= link_to auteur.nom_entier, bibliotheque_parauteur_path(:filtre => 'PQR', :auteur => auteur.nom_entier)%>
+   			</li><% end %><% end %></ul>
+	<li><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %></li>
+	<li><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %></li></ul>
+<% when "STUV" %>
+	<ul><li><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %></li>
+	<li><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %></li>
+	<li><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %></li>
+	<li><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %></li>
+	<li><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %></li>
+	<li><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %></li>
+	<li class = "li_on"><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %>
+			<ul><% @auteurs.select('nom_entier').distinct.each do |auteur| %>
+   			<% if auteur.nom_entier[0] == 'S' || auteur.nom_entier[0] == 'T' || auteur.nom_entier[0] == 'U' || auteur.nom_entier[0] == 'V' %><li>
+   			<%= link_to auteur.nom_entier, bibliotheque_parauteur_path(:filtre => 'STUV', :auteur => auteur.nom_entier)%>
+   			</li><% end %><% end %></ul>
+	<li><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %></li></ul>
+<% when "WXYZ" %>
+	<ul><li><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %></li>
+	<li><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %></li>
+	<li><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %></li>
+	<li><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %></li>
+	<li><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %></li>
+	<li><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %></li>
+	<li><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %></li>
+	<li class = "li_on"><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %>
+			<ul><% @auteurs.select('nom_entier').distinct.each do |auteur| %>
+   			<% if auteur.nom_entier[0] == 'W' || auteur.nom_entier[0] == 'X' || auteur.nom_entier[0] == 'Y' || auteur.nom_entier[0] == 'Z' %><li>
+   			<%= link_to auteur.nom_entier, bibliotheque_parauteur_path(:filtre => 'WXYZ', :auteur => auteur.nom_entier)%>
+   			</li><% end %><% end %></ul>
+<% else %>
+	<ul><li><%= link_to 'ABC', bibliotheque_parauteur_path(:filtre => 'ABC') %></li>
+	<li><%= link_to 'DEF', bibliotheque_parauteur_path(:filtre => 'DEF') %></li>
+	<li><%= link_to 'GHI', bibliotheque_parauteur_path(:filtre => 'GHI') %></li>
+	<li><%= link_to 'JKL', bibliotheque_parauteur_path(:filtre => 'JKL') %></li>
+	<li><%= link_to 'MNO', bibliotheque_parauteur_path(:filtre => 'MNO') %></li>
+	<li><%= link_to 'PQR', bibliotheque_parauteur_path(:filtre => 'PQR') %></li>
+	<li><%= link_to 'STUV', bibliotheque_parauteur_path(:filtre => 'STUV') %></li>
+	<li><%= link_to 'WXYZ', bibliotheque_parauteur_path(:filtre => 'WXYZ') %></li></ul>
+<% end %>
+</span>
+</div>

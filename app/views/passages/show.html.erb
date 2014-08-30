@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Oeuvre:</strong>
+  <%= @passage.oeuvre.titre_oeuvre %>
+</p>
+
+<p>
+  <strong>Titre passage:</strong>
+  <%= @passage.titre_passage %>
+</p>
+
+<p>
+  <strong>Commentaire composé:</strong>
+  <%= link_to "voir", @passage.video %>
+</p>
+
+<%= link_to 'Éditer', edit_passage_path(@passage) %> |
+<%= link_to 'Retour aux passages', passages_path %> |

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oeuvre_id: 1
+  titre_passage: MyString
+
+two:
+  oeuvre_id: 1
+  titre_passage: MyString

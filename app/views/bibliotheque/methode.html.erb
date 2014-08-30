@@ -1,0 +1,22 @@
+<div class = "entree">
+<%= render 'entree' %>
+<br>
+
+<div class = "sortie">
+<%= render 'sortie' %>
+</div>
+
+<div class = "bibli">
+		<ul>
+			<li>
+			<%= link_to 'Commentaire composé', bibliotheque_parsiecle_path(:filtre => 'cc') %>
+			</li>
+			<li>
+			<%= link_to 'Dissertation', bibliotheque_parsiecle_path(:filtre => 'di') %>
+			</li>
+			<li>
+			<%= link_to "Sujet d'invention", bibliotheque_parsiecle_path(:filtre => 'si') %>
+			</li>
+		</ul>
+</div>
+</div>

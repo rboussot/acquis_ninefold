@@ -1,0 +1,107 @@
+<span class = "entree">
+<%= render 'entree' %>
+<br>
+
+<div class = "sortie">
+<%= render 'sortie' %>
+</div>
+
+<div id = "bibli">
+
+<% case params['filtre'] %>
+<% when "T" %>
+<ul><li class = "li_on"><%= link_to 'Terminale', bibliotheque_parniveau_path(:filtre => "T") %>
+		<ul><% @themes.where(niveau: "T").each do |theme| %>
+		<li><%= link_to theme.titre_theme, bibliotheque_parniveau_path(:filtre => "T", :theme => theme) %></li>
+		<% end %></ul></li>
+	<li><%= link_to 'Première', bibliotheque_parniveau_path(:filtre => "1ere") %></li>
+	<li><%= link_to 'Seconde', bibliotheque_parniveau_path(:filtre => "2d") %></li>
+	<li><%= link_to 'Troisième', bibliotheque_parniveau_path(:filtre => "3e") %></li>
+	<li><%= link_to 'Quatrième', bibliotheque_parniveau_path(:filtre => "4e") %></li>
+	<li><%= link_to 'Cinquième', bibliotheque_parniveau_path(:filtre => "5e") %></li>
+	<li><%= link_to 'Sixième', bibliotheque_parniveau_path(:filtre => "6e") %></li>
+</ul>
+<% when "1ere" %>
+<ul><li><%= link_to 'Terminale', bibliotheque_parniveau_path(:filtre => "T") %></li>
+	<li class = "li_on"><%= link_to 'Première', bibliotheque_parniveau_path(:filtre => "1ere") %>
+			<ul><% @themes.where(niveau: "1ere").each do |theme| %>
+			<li><%= link_to theme.titre_theme, bibliotheque_parniveau_path(:filtre => "1ere", :theme => theme) %></li>
+			<% end %></ul></li>
+	<li><%= link_to 'Seconde', bibliotheque_parniveau_path(:filtre => "2d") %></li>
+	<li><%= link_to 'Troisième', bibliotheque_parniveau_path(:filtre => "3e") %></li>
+	<li><%= link_to 'Quatrième', bibliotheque_parniveau_path(:filtre => "4e") %></li>
+	<li><%= link_to 'Cinquième', bibliotheque_parniveau_path(:filtre => "5e") %></li>
+	<li><%= link_to 'Sixième', bibliotheque_parniveau_path(:filtre => "6e") %></li>
+</ul>
+<% when "2d" %>
+<ul><li><%= link_to 'Terminale', bibliotheque_parniveau_path(:filtre => "T") %></li>
+	<li><%= link_to 'Première', bibliotheque_parniveau_path(:filtre => "1ere") %></li>
+	<li class = "li_on"><%= link_to 'Seconde', bibliotheque_parniveau_path(:filtre => "2d") %>
+			<ul><% @themes.where(niveau: "2d").each do |theme| %>
+			<li><%= link_to theme.titre_theme, bibliotheque_parniveau_path(:filtre => "2d", :theme => theme) %></li>
+			<% end %></ul></li>
+	<li><%= link_to 'Troisième', bibliotheque_parniveau_path(:filtre => "3e") %></li>
+	<li><%= link_to 'Quatrième', bibliotheque_parniveau_path(:filtre => "4e") %></li>
+	<li><%= link_to 'Cinquième', bibliotheque_parniveau_path(:filtre => "5e") %></li>
+	<li><%= link_to 'Sixième', bibliotheque_parniveau_path(:filtre => "6e") %></li>
+</ul>
+<% when "3e" %>
+<ul><li><%= link_to 'Terminale', bibliotheque_parniveau_path(:filtre => "T") %></li>
+	<li><%= link_to 'Première', bibliotheque_parniveau_path(:filtre => "1ere") %></li>
+	<li><%= link_to 'Seconde', bibliotheque_parniveau_path(:filtre => "2d") %></li>
+	<li class = "li_on"><%= link_to 'Troisième', bibliotheque_parniveau_path(:filtre => "3e") %>
+			<ul><% @themes.where(niveau: "3e").each do |theme| %>
+			<li><%= link_to theme.titre_theme, bibliotheque_parniveau_path(:filtre => "3e", :theme => theme) %></li>
+			<% end %></ul></li>
+	<li><%= link_to 'Quatrième', bibliotheque_parniveau_path(:filtre => "4e") %></li>
+	<li><%= link_to 'Cinquième', bibliotheque_parniveau_path(:filtre => "5e") %></li>
+	<li><%= link_to 'Sixième', bibliotheque_parniveau_path(:filtre => "6e") %></li>
+</ul>
+<% when "4e" %>
+<ul><li><%= link_to 'Terminale', bibliotheque_parniveau_path(:filtre => "T") %></li>
+	<li><%= link_to 'Première', bibliotheque_parniveau_path(:filtre => "1ere") %></li>
+	<li><%= link_to 'Seconde', bibliotheque_parniveau_path(:filtre => "2de") %></li>
+	<li><%= link_to 'Troisième', bibliotheque_parniveau_path(:filtre => "3e") %></li>
+	<li class = "li_on"><%= link_to 'Quatrième', bibliotheque_parniveau_path(:filtre => "4e") %>
+			<ul><% @themes.where(niveau: "4e").each do |theme| %>
+			<li><%= link_to theme.titre_theme, bibliotheque_parniveau_path(:filtre => "4e", :theme => theme) %></li>
+			<% end %></ul></li>
+	<li><%= link_to 'Cinquième', bibliotheque_parniveau_path(:filtre => "5e") %></li>
+	<li><%= link_to 'Sixième', bibliotheque_parniveau_path(:filtre => "6e") %></li>
+</ul>
+<% when "5e" %>
+<ul><li><%= link_to 'Terminale', bibliotheque_parniveau_path(:filtre => "T") %></li>
+	<li><%= link_to 'Première', bibliotheque_parniveau_path(:filtre => "1ere") %></li>
+	<li><%= link_to 'Seconde', bibliotheque_parniveau_path(:filtre => "2d") %></li>
+	<li><%= link_to 'Troisième', bibliotheque_parniveau_path(:filtre => "3e") %></li>
+	<li><%= link_to 'Quatrième', bibliotheque_parniveau_path(:filtre => "4e") %></li>
+	<li class = "li_on"><%= link_to 'Cinquième', bibliotheque_parniveau_path(:filtre => "5e") %>
+			<ul><% @themes.where(niveau: "5e").each do |theme| %>
+			<li><%= link_to theme.titre_theme, bibliotheque_parniveau_path(:filtre => "5e", :theme => theme) %></li>
+			<% end %></ul></li>
+	<li><%= link_to 'Sixième', bibliotheque_parniveau_path(:filtre => "6e") %></li>
+</ul>
+<% when "6e" %>
+<ul><li><%= link_to 'Terminale', bibliotheque_parniveau_path(:filtre => "T") %></li>
+	<li><%= link_to 'Première', bibliotheque_parniveau_path(:filtre => "1ere") %></li>
+	<li><%= link_to 'Seconde', bibliotheque_parniveau_path(:filtre => "2d") %></li>
+	<li><%= link_to 'Troisième', bibliotheque_parniveau_path(:filtre => "3e") %></li>
+	<li><%= link_to 'Quatrième', bibliotheque_parniveau_path(:filtre => "4e") %></li>
+	<li><%= link_to 'Cinquième', bibliotheque_parniveau_path(:filtre => "5e") %></li>
+	<li class = "li_on"><%= link_to 'Sixième', bibliotheque_parniveau_path(:filtre => "6e") %>
+			<ul><% @themes.where(niveau: "6e").each do |theme| %>
+			<li><%= link_to theme.titre_theme, bibliotheque_parniveau_path(:filtre => "6e", :theme => theme) %></li>
+			<% end %></ul></li>
+</ul>
+<% else %>
+<ul><li><%= link_to 'Terminale', bibliotheque_parniveau_path(:filtre => "T") %></li>
+	<li><%= link_to 'Première', bibliotheque_parniveau_path(:filtre => "1ere") %></li>
+	<li><%= link_to 'Seconde', bibliotheque_parniveau_path(:filtre => "2d") %></li>
+	<li><%= link_to 'Troisième', bibliotheque_parniveau_path(:filtre => "3e") %></li>
+	<li><%= link_to 'Quatrième', bibliotheque_parniveau_path(:filtre => "4e") %></li>
+	<li><%= link_to 'Cinquième', bibliotheque_parniveau_path(:filtre => "5e") %></li>
+	<li><%= link_to 'Sixième', bibliotheque_parniveau_path(:filtre => "6e") %></li>
+</ul>
+<% end %>
+</span>
+</div>

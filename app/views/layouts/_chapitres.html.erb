@@ -1,0 +1,52 @@
+<div class = "aside">
+
+<% if Userlitt.where(:user_id => current_user).where(:oeuvre_id => params['formation']).blank? %>
+  		<%= link_to({:controller => "userlitts", 
+                       :action => "create", 
+                       :oeuvre_id => params['formation'],
+                       :user_id => current_user},
+                       :method => "post") do %>
+		<div class = "carte">
+		<%= image_tag("ajout.png", size:'20x20') %>
+		<%= @auteur.nom_entier %> <br>
+		<i><%= @oeuvre.titre_oeuvre %></i><br>
+		(<%= @oeuvre.date %>).
+		<span class = "ajout">Ajouter dans mes cours</span>
+		</div><% end %><br><br>
+<% else %>
+		<% @userlitt.collect do |userlitt| %>
+       		<%= link_to({:controller => "userlitts", 
+                       :action => "destroy", 
+                       :id => userlitt.id},
+                       :method => "delete") do %>
+                       <div class = "carte">
+			<%= image_tag("enleve.png", size:'20x20') %>
+			<%= @auteur.nom_entier %> <br>
+			<i><%= @oeuvre.titre_oeuvre %></i><br>
+			(<%= @oeuvre.date %>).
+			<span class = "enlever">Enlever de mes cours</span>
+			</div><% end %><br><br>
+    	<% end %>
+<% end %>
+
+	
+
+	<% if params['module'] == nil %>
+	<strong>
+	<% end %>
+	<%= link_to 'Accueil', formation_module_path(formation: params['formation']) %></strong>
+	<br><br>
+
+<% @passages.where(oeuvre_id: params['formation']).each do |passage| %>
+
+	<% if params['module'] == passage.id.to_s %>
+		<strong>
+	<% else %>
+	<% end %>
+
+	<%= link_to passage.titre_passage, formation_module_path(formation: passage.oeuvre_id, :module => passage.id) %>
+		</strong><br><br>
+	<% end %>
+
+</div>
+

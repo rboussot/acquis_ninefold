@@ -1,0 +1,43 @@
+<div class = "aside">
+
+<% case params['controller'] %>
+<% when 'bibliotheque' %>
+
+	<% if params['action'] == 'nouveautes' %><strong><% end %>
+	<%= link_to "Nouveautés", bibliotheque_nouveautes_path %></strong><br><br>
+
+	<h3>Français </h3>
+
+	<% if params['action'] == 'parauteur' or params['action'] == 'parsiecle' or params['action'] == 'parniveau' %><strong><% end %>
+	<%= link_to "Littérature", bibliotheque_parauteur_path %></strong><br><br>
+
+	<% if params['action'] == 'methode' %><strong><% end %>
+	<%= link_to "Méthode", bibliotheque_methode_path %></strong><br><br>
+
+	<% if params['action'] == 'grammaire' %><strong><% end %>
+	<%= link_to "Grammaire", bibliotheque_grammaire_path %></strong><br><br>
+
+	<% if params['action'] == 'stylistique' %><strong><% end %>
+	<%= link_to "Stylistique", bibliotheque_stylistique_path %></strong><br><br>
+
+<% when 'mes_cours' %>
+
+	<% if params['action'] == 'nouveautes' %><strong><% end %>
+	<%= link_to "Nouveautés", bibliotheque_nouveautes_path %></strong><br><br>
+
+	<h3>Français </h3>
+
+	<% if params['action'] == 'litterature' %><strong><% end %>
+	<%= link_to "Littérature", mes_cours_litterature_path %></strong><br><br>
+
+	<% if params['action'] == 'methode' %><strong><% end %>
+	<%= link_to "Méthode", mes_cours_methode_path %></strong><br><br>
+
+	<% if params['action'] == 'grammaire' %><strong><% end %>
+	<%= link_to "Grammaire", mes_cours_grammaire_path %></strong><br><br>
+
+	<% if params['action'] == 'stylistique' %><strong><% end %>
+	<%= link_to "Stylistique", mes_cours_stylistique_path %></strong><br><br>
+
+<% end %>
+</div>

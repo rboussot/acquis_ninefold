@@ -1,0 +1,37 @@
+<%= form_for(@auteur) do |f| %>
+  <% if @auteur.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@auteur.errors.count, "error") %> prohibited this auteur from being saved:</h2>
+
+      <ul>
+      <% @auteur.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :prenom %><br>
+    <%= f.text_field :prenom %>
+  </div>
+  <div class="field">
+    <%= f.label :nom %><br>
+    <%= f.text_field :nom %>
+  </div>
+  <div class="field">
+    <%= f.label :nom_entier %><br>
+    <%= f.text_field :nom_entier %>
+  </div>
+  <div class="field">
+    <%= f.label :date_n %><br>
+    <%= f.number_field :date_n %>
+  </div>
+  <div class="field">
+    <%= f.label :date_m %><br>
+    <%= f.number_field :date_m %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

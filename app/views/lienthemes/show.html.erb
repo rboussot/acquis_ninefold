@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Oeuvre:</strong>
+  <%= @lientheme.oeuvre.titre_oeuvre %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @lientheme.theme.titre_theme %>
+</p>
+
+<%= link_to 'Éditer', edit_lientheme_path(@lientheme) %> |
+<%= link_to 'Retour aux lienthèmes', lienthemes_path %> |

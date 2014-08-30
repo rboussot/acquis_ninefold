@@ -1,0 +1,28 @@
+<br><h1>J'accède à tous mes cours en ligne !</h1>
+<br>
+<%= form_tag sessions_path do %>
+  <p>
+	<%= label_tag :email %><br>
+	<%= text_field_tag :email %>
+  </p>
+  <p>
+  	<%= label_tag :password %><br>
+  	<%= password_field_tag :password %>
+  <p class = "button"><%= submit_tag 'Connection' %></p>
+  <% end %>
+
+<br><br>
+<%= link_to('accueil/visite') do %>
+<div class = "bouton">
+Visite guidée</div>
+<% end %>
+
+<%= link_to('accueil/bio') do %>
+<div class = "bouton">
+Qui suis-je ?</div>
+<% end %>
+
+<%= link_to('users/new') do %>
+<div class = "bouton">
+Je m'abonne !</div>
+<% end %>

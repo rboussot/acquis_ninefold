@@ -1,0 +1,29 @@
+<div class = "entree">
+<%= render 'entree' %>
+<br>
+
+<div class = "sortie">
+<%= render 'sortie' %>
+</div>
+
+<div class = "bibli">
+		<ul>
+		<% if params['filtre'] == "A" %><li><% end %>
+		<%= link_to 'Antiquité', bibliotheque_parsiecle_path(:filtre => 'A') %></li><br>
+		<% if params['filtre'] == "MA" %><li><% end %>
+		<%= link_to 'Moyen-âge', bibliotheque_parsiecle_path(:filtre => 'MA') %></li><br>
+		<% if params['filtre'] == "16e" %><li><% end %>
+		<%= link_to 'XVIe siècle', bibliotheque_parsiecle_path(:filtre => '16e') %></li><br>
+		<% if params['filtre'] == "17e" %><li><% end %>
+		<%= link_to 'XVIIe siècle', bibliotheque_parsiecle_path(:filtre => '17e') %></li><br>
+		<% if params['filtre'] == "18e" %><li><% end %>
+		<%= link_to 'XVIIIe siècle', bibliotheque_parsiecle_path(:filtre => '18e') %></li><br>
+		<% if params['filtre'] == "19e" %><li><% end %>
+		<%= link_to 'XIXe siècle', bibliotheque_parsiecle_path(:filtre => '19e') %></li><br>
+		<% if params['filtre'] == "20e" %><li><% end %>
+		<%= link_to 'XXe siècle', bibliotheque_parsiecle_path(:filtre => '20e') %></li><br>
+		<% if params['filtre'] == "21e" %><li><% end %>
+		<%= link_to 'XXIe siècle', bibliotheque_parsiecle_path(:filtre => '21e') %></li><br>
+		</ul>
+</div>
+</div>

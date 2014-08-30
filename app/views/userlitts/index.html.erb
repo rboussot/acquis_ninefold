@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>User</th>
+      <th>Oeuvre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @userlitts.each do |userlitt| %>
+      <tr>
+        <td><%= userlitt.id %></td>
+        <td><%= userlitt.user.email %></td>
+        <td><%= userlitt.oeuvre.titre_oeuvre %></td>
+        <td><%= link_to image_tag('voir.png'), userlitt %></td>
+        <td><%= link_to image_tag('edit.png'), edit_userlitt_path(userlitt) %></td>
+        <td><%= link_to image_tag('suppr.png'), userlitt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class= "ajouter"><%= link_to '+', new_userlitt_path %></div>
