@@ -9,6 +9,5 @@ class CreateOeuvres < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :auteurs, :auteur_id
   end
 end
